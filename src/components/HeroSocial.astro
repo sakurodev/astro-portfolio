@@ -1,0 +1,12 @@
+---
+import { NavLinkData as NavLinks } from "@/data";
+import SocialLink from "@/components/SocialLink.astro";
+---
+
+<div class="flex flex-col gap-4">
+  {
+    NavLinks.map((navLink) => (
+      <SocialLink url={navLink.url} label={navLink.label} />
+    ))
+  }
+</div>

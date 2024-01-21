@@ -1,0 +1,24 @@
+---
+import Clock from "@/components/Clock.astro";
+import HeaderMenu from "@/components/HeaderMenu.astro";
+import Link from "@/components/Link.astro";
+import { AuthorData as Author } from "@/data";
+---
+
+<header class="pt-12 pb-4 px-5 xl:px-80 w-full">
+  <div class="flex flex-row w-full justify-between">
+    <p class="top text-neutral-800 dark:text-neutral-200 text-nowrap text-lg">
+      {Author.name} © 2024
+    </p>
+
+    <Link href={"mailto:" + Author.mail} text={Author.mail} />
+    <HeaderMenu />
+    <p
+      class="text-lg top col-span-2 hidden md:block col-start-9 max-w-32 leading-tighttext-start text-neutral-800 dark:text-neutral-200"
+    >
+      Localizado en<br />
+      {Author.location}
+    </p>
+    <Clock />
+  </div>
+</header>

@@ -1,0 +1,40 @@
+---
+const { text, href } = Astro.props;
+---
+
+<div class="hidden md:flex flex-row">
+  <div>
+    <a
+      href={href}
+      class="top link text-neutral-800 dark:text-neutral-200 text-lg"
+    >
+      {text}</a
+    >
+  </div>
+</div>
+
+<style>
+  .link {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+  }
+  .link::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    border-radius: 5px;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: currentcolor;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
+  .link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+</style>

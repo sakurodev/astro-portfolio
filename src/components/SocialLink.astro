@@ -1,0 +1,45 @@
+---
+const { url, label } = Astro.props;
+---
+
+<a href={url}>
+  <div
+    class="flex flex-row items-baseline pb-3 w-full border-b border-neutral-300 dark:border-neutral-700 hover:border-neutral-700 dark:hover:border-neutral-300 justify-between pointer-events-auto"
+  >
+    <p class="text-xl text-neutral-800 dark:text-neutral-200">{label}</p>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 20"
+      stroke-width="2"
+      stroke="currentColor"
+      class="w-5 h-5 text-neutral-800 dark:text-neutral-200"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"></path>
+    </svg>
+  </div>
+</a>
+
+<style>
+  a div {
+    transition: 0.2s ease padding;
+    padding-right: 0.5rem;
+  }
+
+  a div:hover {
+    padding-left: 0.5rem;
+  }
+
+  a div svg {
+    transition: 0.2s ease transform;
+    transform: scale(0);
+  }
+
+  a div:hover svg {
+    transform: scale(1);
+    transform-origin: center;
+  }
+</style>

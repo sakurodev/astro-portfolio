@@ -1,0 +1,33 @@
+<div class="overflow-hidden">
+  <div
+    class="font-display marquee z-10 scroll text-8xl text-nowrap mt-12 tracking-tighter text-neutral-800 dark:text-neutral-200"
+  >
+    Desarrollo Frontend ⎯ Desarrollo Backend ⎯ Bases de Datos ⎯ UI/UX ⎯
+    Desarrollo Frontend ⎯ Desarrollo Backend ⎯ Bases de Datos ⎯ UI/UX ⎯ ⎯
+    Frontend ⎯ Backend ⎯ UI/UX
+  </div>
+</div>
+
+<style>
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - 1rem));
+    }
+  }
+
+  .scroll {
+    animation: scroll 10s linear infinite;
+  }
+
+  .reverse {
+    animation-direction: reverse;
+  }
+
+  .selfie {
+    background: url("../../public/images/selfie.jpg") no-repeat;
+    background-size: 100%;
+  }
+</style>

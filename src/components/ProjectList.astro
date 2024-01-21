@@ -1,0 +1,12 @@
+---
+import { ProjectData as Projects } from "@/data";
+import ProjectListItem from "@/components/ProjectListItem.astro";
+---
+
+<div class="flex flex-col w-full py-3">
+  {
+    Projects.map((project, i) => (
+      <ProjectListItem name={project.name} tags={project.tags} index={i} />
+    ))
+  }
+</div>

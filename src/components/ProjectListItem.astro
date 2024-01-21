@@ -1,0 +1,25 @@
+---
+const { name, tags, index } = Astro.props;
+---
+
+<a href="#">
+  <div
+    class=`project-list-item flex flex-row w-full justify-between py-10 hover:px-5 border-neutral-300 dark:border-neutral-700 hover:border-neutral-700 dark:hover:border-neutral-300 transition-all ${index == 0 ? 'border-y' : 'border-y'}`
+  >
+    <div class="flex flex-row gap-56 items-baseline">
+      <div class="flex flex-row gap-3 w-80">
+        <p class="font-display text-3xl text-neutral-800 dark:text-neutral-200">
+          {("0" + (index + 1)).slice(-2)}
+        </p>
+        <p class="font-display text-3xl text-neutral-800 dark:text-neutral-200">
+          /
+        </p>
+        <p class="font-display text-3xl text-neutral-800 dark:text-neutral-200">
+          {name}
+        </p>
+      </div>
+      <p class="text-neutral-800 dark:text-neutral-200">{tags.join(", ")}</p>
+    </div>
+    <p class="text-lg text-neutral-800 dark:text-neutral-200">2022</p>
+  </div>
+</a>

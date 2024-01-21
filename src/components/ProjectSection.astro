@@ -1,0 +1,32 @@
+---
+import ProjectList from "@/components/ProjectList.astro";
+---
+
+<section id="projects" class="observable projects">
+  <div class="px-5 mt-64 xl:px-80">
+    <div class="flex flex-row justify-between align-baseline">
+      <h1
+        class="font-display w-full project text-5xl tracking-tight text-neutral-800 dark:text-neutral-200 pb-16"
+      >
+        Proyectos
+      </h1>
+    </div>
+    <ProjectList />
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  gsap.set(".project", {
+    autoAlpha: 0,
+    x: -40,
+  });
+
+  gsap.to(".project", {
+    scrollTrigger: ".project",
+    autoAlpha: 1,
+    x: 0,
+    stagger: 0.2,
+    ease: "power3.inOut",
+  });
+</script>

@@ -1,0 +1,84 @@
+---
+import Clock from "@/components/Clock.astro";
+import SocialLink from "@/components/SocialLink.astro";
+import Header from "@/components/Header.astro";
+import Marquee from "@/components/Marquee.astro";
+import HeroSocial from "@/components/HeroSocial.astro";
+import ScrollButton from "@/components/ScrollButton.astro";
+---
+
+<section class="hero">
+  <Header />
+  <Marquee />
+
+  <div class="relative px-5 flex flex-row gap-5 w-full mt-16">
+    <div class="flex flex-row m-auto gap-36">
+      <img
+        style="aspect-ratio: 4/4"
+        class="selfie shadow bottom w-[24rem] rounded-3xl inline-block z-0"
+      />
+
+      <div class="right flex flex-col justify-between">
+        <HeroSocial />
+        <div class="flex flex-col gap-5">
+          <p
+            class="right text-lg tracking-tight max-w-md text-neutral-800 dark:text-neutral-200"
+          >
+            Estudiante de Ingeniería en Informática apasionado por crear
+            experiencias web inmersivas y memorables.
+          </p>
+
+          <p
+            class="right text-lg tracking-tight max-w-md text-neutral-800 dark:text-neutral-200"
+          >
+            Actualmente disponible para colaborar en proyectos de desarrollo de
+            software.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-full flex justify-center absolute bottom-10">
+    <ScrollButton />
+  </div>
+  <script>
+    import { gsap } from "gsap";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.from(".top", {
+      autoAlpha: 0,
+      x: -40,
+      ease: "power3.inOut",
+      stagger: 0.2,
+    });
+
+    gsap.from(".selfie", {
+      autoAlpha: 0,
+      x: -40,
+      ease: "power3.inOut",
+      delay: 0.8,
+    });
+
+    gsap.from(".right", {
+      autoAlpha: 0,
+      x: -40,
+      ease: "power3.inOut",
+      delay: 1,
+    });
+
+    gsap.from(".marquee", {
+      autoAlpha: 0,
+
+      ease: "power3.inOut",
+      delay: 1.5,
+    });
+
+    // gsap.from(".bottom", {
+    //   opacity: 0,
+    //   x: -40,
+    //   ease: "power3.inOut",
+    //   delay: 0.8,
+    // });
+  </script>
+</section>
