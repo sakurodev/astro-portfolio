@@ -1,0 +1,44 @@
+---
+import Header from "./Header.astro";
+import ScrollButton from "./ScrollButton.astro";
+import Link from "./Link.astro";
+import { NavLinkData as NavLinks } from "@/data";
+---
+
+<section class="w-screen h-screen bg-stone-200 flex justify-center">
+  <Header />
+  <div class="absolute h-full mx-80 flex">
+    <h1 class="m-auto max-w-5xl text-stone-800">
+      <span class="font-display text-5xl tracking-tight">
+        Eduardo Navarro 👨‍💻
+      </span>
+      <span class="font-display text-5xl tracking-tight">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </span>
+    </h1>
+  </div>
+  <div class="absolute bottom-8 px-80 w-full flex flex-row justify-between">
+    <ScrollButton />
+    <ul class="flex flex-row gap-10">
+      {
+        NavLinks.map((navLink) => (
+          <Link text={navLink.label} href={navLink.url} />
+        ))
+      }
+    </ul>
+  </div>
+  <span class="shape absolute top-1/2 z-0 bg-yellow-600"></span>
+  <span class="shape absolute top-1/4 z-0 bg-red-600"></span>
+</section>
+
+<style>
+  .shape {
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+    filter: blur(200px);
+    opacity: 0.3;
+  }
+</style>
