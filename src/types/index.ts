@@ -1,3 +1,9 @@
+export type Author = {
+    name: string;
+    mail: string;
+    location: string;
+}
+
 export type NavLink = {
     label: string;
     url: string;
@@ -9,4 +15,5 @@ export type Project = {
     image: string;
     live_url: string;
     repo_url: string;
+    tags: string[];
 }

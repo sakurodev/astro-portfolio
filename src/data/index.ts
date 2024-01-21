@@ -1,4 +1,10 @@
-import type { NavLink, Project } from "@/types";
+import type { NavLink, Project, Author } from "@/types";
+
+export const AuthorData : Author = {
+    name: "Eduardo Navarro",
+    mail: "ed.navarrol@gmail.com",
+    location: "Santiago, Chile"
+}
 
 export const NavLinkData : NavLink [] = [
     {
@@ -17,17 +23,27 @@ export const NavLinkData : NavLink [] = [
 
 export const ProjectData : Project [] = [
     {
-        name: "SQLito",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        name: "Twitch Clone",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
         image: "sqlito.png",
         live_url: "#",
         repo_url: "#",
+        tags: ["JavaScript", "React"],
     },
     {
-        name: "KarmApp",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        name: "KarmaApp",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
         image: "karma.png",
         live_url: "#",
         repo_url: "#",
+        tags: ["PHP", "Tailwind", "React"],
+    },
+    {
+        name: "Astro",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        image: "karma.png",
+        live_url: "#",
+        repo_url: "#",
+        tags: ["JavaScript", "GSAP"],
     }
 ]
